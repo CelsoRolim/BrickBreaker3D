@@ -36,4 +36,12 @@ public class BallController : MonoBehaviour {
 		ballRigidBody.AddForce (direction * scale, ForceMode.Force);	
 
 	}
+
+	void OnTriggerEnter(Collider col)
+	{
+		if(col.gameObject.CompareTag("LoseZone"))
+		{
+			Destroy (gameObject);
+		}
+	}
 }
